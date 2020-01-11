@@ -8,6 +8,6 @@ void main() {
     create: (context) => AppState(
       apiBasePath: 'localhost:8000',
     ),
-    child: App(),
+    child: const App(),
   ));
 }
