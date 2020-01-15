@@ -6,7 +6,7 @@ import 'app.dart';
 void main() {
   runApp(Provider(
     create: (context) => AppState(
-      apiBasePath: 'localhost:8000',
+      apiBasePath: '10.0.2.2:80',
     ),
     child: const App(),
   ));

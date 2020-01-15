@@ -23,7 +23,14 @@ class HomePage extends StatelessWidget {
         title: const Text('sample'),
       ),
       body: Center(
-        child: Text(model.str),
+        child: ListView.separated(
+          itemCount: model.categories.length,
+          itemBuilder: (context, index) => FlatButton(
+            onPressed: () {},
+            child: Text(model.categories[index].name),
+          ),
+          separatorBuilder: (context, index) => const SizedBox(height: 12),
+        ),
       ),
     );
   }
