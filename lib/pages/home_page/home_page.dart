@@ -22,14 +22,20 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('sample'),
       ),
-      body: Center(
-        child: ListView.separated(
-          itemCount: model.categories.length,
-          itemBuilder: (context, index) => FlatButton(
-            onPressed: () {},
-            child: Text(model.categories[index].name),
+      body: ListView.builder(
+        itemCount: model.categories.length,
+        itemBuilder: (context, index) => FractionallySizedBox(
+          widthFactor: 0.8,
+          child: MaterialButton(
+            onPressed: () => model.onPanelTapped(context, index),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16),
+              child: Text(
+                model.categories[index].name,
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
-          separatorBuilder: (context, index) => const SizedBox(height: 12),
         ),
       ),
     );

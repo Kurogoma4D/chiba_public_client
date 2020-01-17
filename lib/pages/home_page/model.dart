@@ -29,4 +29,6 @@ class Model extends ChangeNotifier {
       }
     });
   }
+
+  void onPanelTapped(BuildContext context, int index) {}
 }
