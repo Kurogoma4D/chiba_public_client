@@ -30,5 +30,8 @@ class Model extends ChangeNotifier {
     });
   }
 
-  void onPanelTapped(BuildContext context, int index) {}
+  void onPanelTapped(BuildContext context, int index) {
+    Navigator.of(context)
+        .pushNamed(state.routes['detail'], arguments: _categories[index]);
+  }
 }
