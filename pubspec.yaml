@@ -22,6 +22,7 @@ dependencies:
 
   provider: ^3.2.0
   http: any
+  google_maps_flutter: ^0.5.21+15
 
 dev_dependencies:
   flutter_test:
