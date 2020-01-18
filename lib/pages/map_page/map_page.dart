@@ -23,16 +23,18 @@ class MapPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final model = Provider.of<Model>(context);
+    final model = Provider.of<Model>(context);
     final appbar = AppBar(title: const Text('Detail'));
     return Scaffold(
       appBar: appbar,
-      body: const SizedBox.expand(
+      body: SizedBox.expand(
         child: GoogleMap(
-          initialCameraPosition: CameraPosition(
+          initialCameraPosition: const CameraPosition(
             target: LatLng(35.581893, 140.131368),
             zoom: 16,
           ),
+          onMapCreated: model.onMapCreated,
+          markers: model.markers,
         ),
       ),
     );
