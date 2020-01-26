@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 
 import 'model.dart';
 
-class MapPage extends StatelessWidget {
+class MapPage extends StatelessWidget with CameraSettings {
   const MapPage._({Key key}) : super(key: key);
 
   static Widget withDependencies(
@@ -29,19 +29,11 @@ class MapPage extends StatelessWidget {
       appBar: appbar,
       body: SizedBox.expand(
         child: GoogleMap(
-          initialCameraPosition: const CameraPosition(
-            target: LatLng(35.613297, 140.113318),
-            zoom: 14,
-          ),
+          initialCameraPosition: CameraSettings.initialCameraPosition,
           onMapCreated: model.onMapCreated,
           markers: model.markers,
           myLocationEnabled: true,
-          cameraTargetBounds: CameraTargetBounds(
-            LatLngBounds(
-              northeast: const LatLng(35.712735, 140.293673),
-              southwest: const LatLng(35.510485, 140.022571),
-            ),
-          ),
+          cameraTargetBounds: CameraSettings.targetBounds,
         ),
       ),
     );

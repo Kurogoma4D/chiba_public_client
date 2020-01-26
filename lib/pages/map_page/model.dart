@@ -8,6 +8,20 @@ import 'package:http/http.dart' as http;
 
 import '../../app.dart';
 
+mixin CameraSettings {
+  static const CameraPosition initialCameraPosition = CameraPosition(
+    target: LatLng(35.613297, 140.113318),
+    zoom: 14,
+  );
+
+  static CameraTargetBounds targetBounds = CameraTargetBounds(
+    LatLngBounds(
+      northeast: const LatLng(35.712735, 140.293673),
+      southwest: const LatLng(35.510485, 140.022571),
+    ),
+  );
+}
+
 class Model extends ChangeNotifier {
   Model({this.state, this.category}) : _facilities = [] {
     _fetchFacilities();
