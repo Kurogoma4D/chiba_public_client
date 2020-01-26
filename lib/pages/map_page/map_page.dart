@@ -30,11 +30,18 @@ class MapPage extends StatelessWidget {
       body: SizedBox.expand(
         child: GoogleMap(
           initialCameraPosition: const CameraPosition(
-            target: LatLng(35.581893, 140.131368),
-            zoom: 16,
+            target: LatLng(35.613297, 140.113318),
+            zoom: 14,
           ),
           onMapCreated: model.onMapCreated,
           markers: model.markers,
+          myLocationEnabled: true,
+          cameraTargetBounds: CameraTargetBounds(
+            LatLngBounds(
+              northeast: const LatLng(35.712735, 140.293673),
+              southwest: const LatLng(35.510485, 140.022571),
+            ),
+          ),
         ),
       ),
     );
